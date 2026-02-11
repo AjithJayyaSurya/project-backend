@@ -1,3 +1,4 @@
+import dns from "dns";
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -6,6 +7,9 @@ import connectDB from "./config/db.js";
 import authRoutes from "./routes/auth.routes.js";
 import adminRoutes from "./routes/admin.routes.js";
 import userRoutes from "./routes/user.routes.js";
+
+// Set DNS servers to resolve MongoDB Atlas connection issues
+dns.setServers(["8.8.8.8", "1.1.1.1"]);
 
 dotenv.config();
 

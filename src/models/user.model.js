@@ -7,6 +7,7 @@ const usageLogSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema({
   name: String,
+  age: Number,
   email: { type: String, unique: true },
   password: String,
 
